@@ -16,8 +16,11 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware
+//To read the form data
 app.use(express.urlencoded({ extended: true }));
+//to read json data
 app.use(express.json());
+//to read or parse cookie stored on client side
 app.use(cookieParser());
 
 // Routes

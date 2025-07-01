@@ -32,8 +32,6 @@ app.post(
   "/upload",
   upload.fields([{ name: "profileImage" }, { name: "coverImage" }]),
   (req, res) => {
-    
-
     return res.redirect("/");
   }
 );

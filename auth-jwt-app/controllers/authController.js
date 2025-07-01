@@ -9,6 +9,7 @@ const generateToken = (userId) => {
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
 
+  //exception-handling
   try {
     let userExists = await User.findOne({ email });
     if (userExists)
@@ -44,6 +45,7 @@ exports.login = async (req, res) => {
 exports.showDashboard = async (req, res) => {
   res.render("dashboard", { user: req.user });
 };
+
 
 exports.forgotPassword = async (req, res) => {
   const { email } = req.body;
